@@ -1,5 +1,9 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib
+
+# Usar backend "Agg" para evitar abrir ventanas en Codespaces
+matplotlib.use('Agg')  
 
 # Interpolación de Newton (diferencias divididas)
 def calcular_diferencias_divididas(valores_x, valores_y):
@@ -52,7 +56,10 @@ def graficar_interpolacion_newton(valores_x, valores_y, valor_x, y_newton):
     plt.ylabel('y')
     plt.legend()
     plt.grid(True)
-    plt.show()
+
+    # Guardar el gráfico en un archivo
+    plt.savefig('grafico_interpolacion_directa_newton.png')
+    plt.close()
 
 # Graficar Interpolación Inversa
 def graficar_interpolacion_inversa_newton(valores_x, valores_y, valor_y, x_interpolado):
@@ -68,7 +75,10 @@ def graficar_interpolacion_inversa_newton(valores_x, valores_y, valor_y, x_inter
     plt.ylabel('x')
     plt.legend()
     plt.grid(True)
-    plt.show()
+
+    # Guardar el gráfico en un archivo
+    plt.savefig('grafico_interpolacion_inversa_newton.png')
+    plt.close()
 
 # Datos del ejercicio
 valores_x = [1, 2, 3]
